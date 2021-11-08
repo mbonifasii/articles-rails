@@ -924,6 +924,13 @@
   "resolved" "https://registry.npmjs.org/@rails/actioncable/-/actioncable-6.1.4.tgz"
   "version" "6.1.4"
 
+"@rails/actiontext@^6.1.4-1":
+  "integrity" "sha512-dS7AdkJtSyuX2PXipCTNOKEg5G/ftwS+FmM5+8Zxbo35tgs08hfYFPh0muoj5eEkshwV67kEEV/iHgX8PMLh4w=="
+  "resolved" "https://registry.npmjs.org/@rails/actiontext/-/actiontext-6.1.4-1.tgz"
+  "version" "6.1.4-1"
+  dependencies:
+    "@rails/activestorage" "^6.0.0"
+
 "@rails/activestorage@^6.0.0":
   "integrity" "sha512-1Tm8uaVBhLTDEG4YaFPvqguhjbUGSPVItm0CfkRpIFZIkybWzFAxatIrk4YVOOxB8ZdXS7GdeYa1qVwjdiDkgQ=="
   "resolved" "https://registry.npmjs.org/@rails/activestorage/-/activestorage-6.1.4.tgz"
@@ -6587,6 +6594,11 @@
   "integrity" "sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw=="
   "resolved" "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.0.tgz"
   "version" "1.0.0"
+
+"trix@^1.2.0":
+  "integrity" "sha512-BbH6mb6gk+AV4f2as38mP6Ucc1LE3OD6XxkZnAgPIduWXYtvg2mI3cZhIZSLqmMh9OITEpOBCCk88IVmyjU7bA=="
+  "resolved" "https://registry.npmjs.org/trix/-/trix-1.3.1.tgz"
+  "version" "1.3.1"
 
 "ts-pnp@^1.1.6":
   "integrity" "sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw=="
