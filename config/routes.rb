@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  root to: "home#index"
+  root to: "hello#index"
+
+  get "articles", to: "articles#index"
 
   get "hello", to: "hello#index"
 
-  get "articles", to: "articles#new"
+  get "articles/new", to: "articles#new", as: :new_articles
 
   post "articles", to: "articles#create"
 
