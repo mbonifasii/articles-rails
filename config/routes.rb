@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root to: "hello#index"
 
+  get "articles/user/:user_id", to: "articles#from_author"
+
   get "articles", to: "articles#index"
 
   get "hello", to: "hello#index"

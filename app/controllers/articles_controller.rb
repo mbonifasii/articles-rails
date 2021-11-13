@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-    before_action :find_article, except: [:new, :create, :index]
+    before_action :find_article, except: [:new, :create, :index, :from_author]
     before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
     def index 
@@ -12,8 +12,12 @@ class ArticlesController < ApplicationController
     end
 
     def create 
-        @article = Article.create(title: params[:article][:title], content: params[:article][:content])
-        render json: @article
+        @article = current_user.articles.new(title: params[:article][:title], content: params[:article][:content])
+        @article.user = current_user
+        @article.save
+
+
+        render @article
     end
 
     def show 
@@ -30,6 +34,10 @@ class ArticlesController < ApplicationController
     def destroy 
         @article.destroy
         redirect_to root_path
+    end
+
+    def from_author 
+        @user = User.find(params[:user_id])
     end
 
     def find_article
