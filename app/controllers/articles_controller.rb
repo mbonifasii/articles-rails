@@ -9,14 +9,13 @@ class ArticlesController < ApplicationController
 
     def new  
         @article = Article.new
+        @categories = Category.all
     end
 
     def create 
-        @article = current_user.articles.new(title: params[:article][:title], content: params[:article][:content])
-        @article.user = current_user
-        @article.save
+        @article = current_user.articles.create(article_params) 
 
-
+        @article.save_categories
         render @article
     end
 
@@ -24,10 +23,12 @@ class ArticlesController < ApplicationController
     end
 
     def edit
+        @categories = Category.all
     end
 
     def update 
-        @article.update(title: params[:article][:title], content: params[:article][:content])
+        @article.update(article_params)
+        @article.save_categories
         redirect_to @article
     end
 
@@ -42,6 +43,10 @@ class ArticlesController < ApplicationController
 
     def find_article
         @article = Article.find(params[:id])
+    end
+
+    def article_params
+        params.require(:article).permit(:title, :content, category_elements: [])
     end
 
 end
